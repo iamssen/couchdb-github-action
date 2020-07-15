@@ -1,0 +1,27 @@
+name: TEST
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+
+      - name: Start CouchDB
+        uses: ./
+        with:
+          couchdb-version: "3.1.0"
+
+      - name: Test
+        run: curl -sS -f http://127.0.0.1:5984/

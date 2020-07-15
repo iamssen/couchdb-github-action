@@ -1,0 +1,18 @@
+name: "CouchDB in GitHub Actions"
+description: "Start a CouchDB server (on port 5984)"
+
+branding:
+  icon: database
+  color: red
+
+inputs:
+  couchdb-version:
+    description: CouchDB version to use (default "3.1.0")
+    required: false
+    default: 3.1.0
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.couchdb-version }}
