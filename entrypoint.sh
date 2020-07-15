@@ -12,8 +12,8 @@ echo "- curl : $(which curl)"
 echo "- /opt/couchdb/etc : $(ls /opt/couchdb/etc)"
 
 echo "Starting CouchDB"
-docker run --name my-couchdb-app -p 5984:5984 -v /opt/couchdb/etc:/opt/couchdb/etc/local.d -d couchdb:$COUCHDB_VERSION
-docker exec my-couchdb-app "ls /opt/couchdb/etc/local.d"
+docker run --name my-couchdb-app -p 5984:5984 -v "/opt/couchdb/etc":"/opt/couchdb/etc/local.d" -d couchdb:$COUCHDB_VERSION
+docker exec my-couchdb-app ls /opt/couchdb/etc/local.d
 
 # FIXME can't connect. reason is unknown.
 sleep 20
