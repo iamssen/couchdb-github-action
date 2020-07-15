@@ -9,13 +9,11 @@ fi
 
 echo "Environments"
 echo "- curl : $(which curl)"
-echo "- /opt/couchdb/etc : $(ls /opt/couchdb/etc)"
 
 echo "Starting CouchDB"
-docker run --name my-couchdb-app -p 5984:5984 -v "/github/workspace/couchdb.ini":"/opt/couchdb/etc/local.ini" -d couchdb:$COUCHDB_VERSION
+docker run --name my-couchdb-app -p 5984:5984 -v "/github/workspace/local.d":"/opt/couchdb/etc/local.d" -d couchdb:$COUCHDB_VERSION
 docker ps
 docker exec my-couchdb-app ls /opt/couchdb/etc/local.d
-docker exec my-couchdb-app ls /opt/couchdb/etc
 
 # FIXME can't connect. reason is unknown.
 sleep 20
