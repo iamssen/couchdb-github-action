@@ -18,6 +18,9 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v2
 
+      - name: Install
+        run: apk add curl
+
       - name: Start CouchDB
         uses: ./
         with:
