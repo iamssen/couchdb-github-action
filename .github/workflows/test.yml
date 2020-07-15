@@ -21,7 +21,7 @@ jobs:
       - name: Start CouchDB
         uses: ./
         with:
-          couchdb-version: "3.1.0"
+          couchdb-version: "2.3.1"
 
       - name: Test
         run: curl -sS -f http://127.0.0.1:5984/
