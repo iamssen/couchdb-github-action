@@ -14,7 +14,7 @@ echo "Starting CouchDB"
 docker run -p 5984:5984 -d couchdb:$COUCHDB_VERSION
 
 # FIXME can't connect. reason is unknown.
-sleep 10
+sleep 20
 # function waiting() {
 #   echo "Waiting for CouchDB run..."
 
