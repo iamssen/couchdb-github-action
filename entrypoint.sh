@@ -7,10 +7,11 @@ if [ -z "$COUCHDB_VERSION" ]; then
   exit 2
 fi
 
+echo "Check dependencies"
+echo "- curl : $(which curl)"
+
 echo "Starting CouchDB"
 docker run -p 5984:5984 -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -d couchdb:$COUCHDB_VERSION
-
-which curl
 
 function waiting() {
   echo "Waiting for CouchDB run..."
