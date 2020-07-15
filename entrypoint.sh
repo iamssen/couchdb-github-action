@@ -20,6 +20,7 @@ function waiting() {
   do
     # echo $(curl -o /dev/null -w "%{http_code}" "http://localhost:5984")
     echo $(curl -f http://localhost:5984)
+    echo $(docker ps)
     # echo -ne "."
     sleep 5
   done
