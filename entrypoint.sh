@@ -13,8 +13,8 @@ echo "- curl : $(which curl)"
 echo "Starting CouchDB"
 docker run -p 5984:5984 -d couchdb:$COUCHDB_VERSION
 
-sleep 20
-
+# FIXME can't connect. reason is unknown.
+sleep 10
 # function waiting() {
 #   echo "Waiting for CouchDB run..."
 
