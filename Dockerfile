@@ -1,6 +1,6 @@
 FROM docker:stable
 RUN apk add --no-cache curl
-COPY local.ini /opt/couchdb/etc/
+COPY couchdb.ini /opt/couchdb/etc/local.ini
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
