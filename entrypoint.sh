@@ -11,7 +11,7 @@ echo "Check dependencies"
 echo "- curl : $(which curl)"
 
 echo "Starting CouchDB"
-docker run -p 5984:5984 -d couchdb:$COUCHDB_VERSION
+docker run -p 5984:5984 -v /opt/couchdb/etc:/opt/couchdb/etc/local.d -d couchdb:$COUCHDB_VERSION
 
 # FIXME can't connect. reason is unknown.
 sleep 20
