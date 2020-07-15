@@ -35,3 +35,7 @@ jobs:
 - auth
   - name : `admin`
   - password : `password`
+
+# Examples
+
+- <https://github.com/iamssen/mongodb-to-couchdb/blob/master/.github/workflows/test.yml#L21>
