@@ -21,6 +21,7 @@ jobs:
         uses: iamssen/couchdb-github-action@master
         with:
           couchdb-version: ${{ matrix.couchdb }}
+
       - name: Test
         run: curl -sS -f http://127.0.0.1:5984/
 ```
