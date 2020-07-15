@@ -7,8 +7,9 @@ if [ -z "$COUCHDB_VERSION" ]; then
   exit 2
 fi
 
-echo "Check dependencies"
+echo "Environments"
 echo "- curl : $(which curl)"
+echo "- /opt/couchdb/etc : $(ls /opt/couchdb/etc)"
 
 echo "Starting CouchDB"
 docker run -p 5984:5984 -v /opt/couchdb/etc:/opt/couchdb/etc/local.d -d couchdb:$COUCHDB_VERSION
