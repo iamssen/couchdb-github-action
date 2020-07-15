@@ -7,23 +7,20 @@ on: [push]
 
 jobs:
   build:
+    name: Test ${{ matrix.couchdb }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [10, 12, 14]
-        couchdb: [3.1.0]
+        couchdb: ["3.1.0", "2.3.1"]
 
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Set Node.js version
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
-
       - name: Start CouchDB
         uses: iamssen/couchdb-github-action@master
         with:
           couchdb-version: ${{ matrix.couchdb }}
+      - name: Test
+        run: curl -sS -f http://127.0.0.1:5984/
 ```
