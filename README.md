@@ -22,6 +22,16 @@ jobs:
         with:
           couchdb-version: ${{ matrix.couchdb }}
 
-      - name: Test
-        run: curl -sS -f http://127.0.0.1:5984/
+      - name: Test endpoint
+        run: |
+          curl -f http://127.0.0.1:5984/
+
+      - name: Test auth
+        run: |
+          curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"name": "admin", "password": "password"}' http://127.0.0.1:5984/_session
 ```
+
+- endpoint : `http://127.0.0.1:5984`
+- auth
+  - name : `admin`
+  - password : `password`
