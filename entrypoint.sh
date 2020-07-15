@@ -10,6 +10,8 @@ fi
 echo "Starting CouchDB"
 docker run -p 5984:5984 -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -d couchdb:$COUCHDB_VERSION
 
+which curl
+
 function waiting() {
   echo "Waiting for CouchDB run..."
 
