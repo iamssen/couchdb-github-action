@@ -38,4 +38,5 @@ jobs:
 
 # Examples
 
-- <https://github.com/iamssen/mongodb-to-couchdb/blob/master/.github/workflows/test.yml#L21>
+- Github Workflow Sample <https://github.com/iamssen/mongodb-to-couchdb/blob/master/.github/workflows/test.yml#L21>
+- Jest Testcase <https://github.com/iamssen/mongodb-to-couchdb/blob/master/src/%40ssen/couchdb/__tests__/couchdb.test.ts>
