@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        couchdb: ["3.3", "3.2", "3.1", "2.3"]
+        couchdb: ["3.4", "3.3", "3.2", "3.1", "2.3"]
 
     steps:
       - name: Git checkout
