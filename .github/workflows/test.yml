@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        couchdb: [latest, "3.3", "3.2", "3.1", "2.3"]
+        couchdb: [latest, "3.4", "3.3", "3.2", "3.1", "2.3"]
 
     steps:
       - name: Clone Repository

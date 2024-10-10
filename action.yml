@@ -7,9 +7,9 @@ branding:
 
 inputs:
   couchdb-version:
-    description: CouchDB version to use (default "3.3.2")
+    description: CouchDB version to use (default "3.4.1")
     required: false
-    default: 3.3.2
+    default: 3.4.1
 
 runs:
   using: "docker"
